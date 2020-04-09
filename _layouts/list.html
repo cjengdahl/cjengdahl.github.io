@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="catalogue">
+  {% for post in site.posts %}
+    {% if page.list_type == "Project" and post.type == "Project"  %}
+      {% if post.project_url %}
+        {% assign url = post.project_url %}
+      {% else %}
+        {% assign url = post.url | prepend: site.baseurl %}
+      {% endif %}
+      <a href="{{ url }}" class="catalogue-item">
+        <div>
+          <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B, %Y" }}</time>
+          <h1 class="catalogue-title">{{ post.title }}</h1>
+          <div class="catalogue-line"></div>
+
+          <p>
+            {{ post.content | strip_html | truncatewords: 30 }}
+          </p>
+
+        </div>
+      </a>
+    {% elsif page.list_type == "Post" and post.type == "Post" %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
+        <div>
+          <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+          <h1 class="catalogue-title">{{ post.title }}</h1>
+          <div class="catalogue-line"></div>
+
+          <p>
+            {{ post.content | strip_html | truncatewords: 30 }}
+          </p>
+
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
