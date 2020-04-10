@@ -10,7 +10,7 @@ I dwell in outskirts of the _Good Land_, Milwaukee.
 
 I like to tinker with code and electronics, among other things.
 
-This site is meant to documents some of my better thoughts and projects.
+This site is meant to document some of my better thoughts and projects.
 
 Don’t expect anything too eloquent, as this is site is more for me than it is for you.
 
